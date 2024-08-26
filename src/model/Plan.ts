@@ -20,10 +20,7 @@ const planSchema = new Schema({
         type:String,
         required:[true, "duration is required"],
     },
-    ottPlatform:{
-        type:Schema.Types.ObjectId,
-        ref:'OttPlatform',
-    }
+    ottPlatform:[{type:Schema.Types.ObjectId, ref:"OttPlatform"}]
 })
 
 const PlanModel = mongoose.model<Plan>('Plan', planSchema);
