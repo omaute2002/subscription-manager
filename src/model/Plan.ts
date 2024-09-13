@@ -20,6 +20,10 @@ const planSchema = new Schema({
         type:String,
         required:[true, "duration is required"],
     },
+    description:{
+        type:String,
+        required:[true, "description is required"]
+    },
     ottPlatform:[{type:Schema.Types.ObjectId, ref:"OttPlatform"}]
 })
 

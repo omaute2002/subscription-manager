@@ -25,7 +25,7 @@ export async function POST(request: NextRequest) {
     }
     if (isValidEmail && isPasswordCorrect) {
       const newOttPlatform = new OttPlatformModel({
-        lowerCaseName,
+        name : lowerCaseName,
         description,
         logoUrl,
         website,

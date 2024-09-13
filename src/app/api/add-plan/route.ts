@@ -9,7 +9,7 @@ const adminPassword = process.env.ADMIN_PASSWORD || "";
 export async function POST(request: NextRequest) {
   dbConnect();
   try {
-    const { email, password, name, price, duration, ottPlatform } =
+    const { email, password, name, price, duration, description, ottPlatform } =
       await request.json();
 
     const isValidEmail = email === adminEmail;
@@ -45,6 +45,7 @@ export async function POST(request: NextRequest) {
         name,
         price,
         duration,
+        description,
         ottPlatform: [ottPlatformId],
       });
       await newPlan.save();

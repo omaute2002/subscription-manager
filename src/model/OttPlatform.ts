@@ -1,4 +1,4 @@
-import mongoose,{Schema, Document} from "mongoose";
+import mongoose,{Schema, Document, Model} from "mongoose";
 
 export interface OttPlatform extends Document{
     name: string;
@@ -26,7 +26,8 @@ const ottPlatformSchema = new Schema({
         required:[true, "website url required"],
     },
     plans:[{type:Schema.Types.ObjectId, ref:"Plan"}]
-})
+})  
 
-const OttPlatformModel = mongoose.model<OttPlatform>("OttPlatform", ottPlatformSchema);
+
+const OttPlatformModel: Model<OttPlatform> = mongoose.models.OttPlatform || mongoose.model<OttPlatform>("OttPlatform", ottPlatformSchema);
 export default OttPlatformModel;

@@ -41,7 +41,7 @@ function page() {
           title: "Logged in Successfully",
           description: "",
         });
-        router.push("/dashboard");
+        router.push("/marketplace");
       }
     } catch (error: unknown) {
       if (axios.isAxiosError(error)) {

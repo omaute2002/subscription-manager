@@ -21,7 +21,7 @@ export async function POST(request: Request) {
 
         if (!existingUserByEmail.isVerified) {
             return NextResponse.json({
-                success: false,
+                success: false, 
                 message: "User is not verified"
             }, { status: 403 });
         }
